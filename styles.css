@@ -122,7 +122,7 @@ input, textarea {
 }
 
 .sidebar {
-  width: 256px;
+  width: 300px;
   flex-shrink: 0;
   padding: 8px 0;
   transition: width 0.2s;
@@ -141,7 +141,7 @@ input, textarea {
   border: none;
   background: none;
   border-radius: 0 24px 24px 0;
-  font-size: 14px;
+  font-size: 23px;
   color: var(--text);
   text-align: left;
 }
@@ -166,7 +166,7 @@ input, textarea {
 }
 
 .section-title {
-  font-size: 13px;
+  font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -196,7 +196,7 @@ input, textarea {
   width: 100%;
   border: none;
   outline: none;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 8px;
 }
@@ -208,7 +208,7 @@ input, textarea {
   border: none;
   outline: none;
   resize: none;
-  font-size: 15px;
+  font-size: 20px;
   font-family: inherit;
   line-height: 1.5;
 }
@@ -329,14 +329,14 @@ input, textarea {
 .note-card:hover .note-actions { opacity: 1; }
 
 .note-title {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 6px;
   word-wrap: break-word;
 }
 
 .note-text {
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.5;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -392,7 +392,7 @@ input, textarea {
   border: none;
   outline: none;
   resize: vertical;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.6;
   font-family: inherit;
 }

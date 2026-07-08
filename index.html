@@ -1,55 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Keep</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="./assets/keeps-favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keep Clone</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" type="image/x-icon" href="./assets/keeps-favicon.png">
 </head>
 <body>
-    <header class="navbar">
-        <!-- Hamburger menu -->
-        <button class="icon-btn" id="sidebarToggle" data-tooltip="Main menu">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
-        </button>
 
-        <!-- Logo -->
-        <div class="logo">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fbbc04"/><path d="M12 6a4.5 4.5 0 0 0-2.5 8.24V16a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1.76A4.5 4.5 0 0 0 12 6Zm-1.25 12.5h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1 0-1.5Z" fill="#fff"/></svg>
-            <span>Keep</span>
-        </div>
+  <!-- ============ TOP NAVBAR ============ -->
+  <header class="navbar">
+    <button class="icon-btn" id="sidebarToggle" data-tooltip="Main menu">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </button>
 
-        <!-- Search -->
-        <div class="search-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
-            <input type="text" placeholder="Search">
-        </div>
+    <div class="logo">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fbbc04"/><path d="M12 6a4.5 4.5 0 0 0-2.5 8.24V16a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1.76A4.5 4.5 0 0 0 12 6Zm-1.25 12.5h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1 0-1.5Z" fill="#fff"/></svg>
+      <span>Keep</span>
+    </div>
 
-        <!-- Right icons -->
-        <div class="right-actions">
-            <button class="icon-btn" aria-label="Refresh">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.65 6.35A7.95 7.95 0 0 0 12 4a8 8 0 1 0 7.73 10h-2.08A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
-            </button>
-            <button class="icon-btn" aria-label="List view">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zm0 9h7v7h-7v-7zM4 13h7v7H4v-7z"/></svg>
-            </button>
-            <button class="icon-btn" aria-label="Settings">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.14 12.94a7.14 7.14 0 0 0 .06-.94 7.14 7.14 0 0 0-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.62-.94l-.36-2.54a.5.5 0 0 0-.5-.42h-3.84a.5.5 0 0 0-.5.42l-.36 2.54c-.59.24-1.13.56-1.62.94l-2.39-.96a.5.5 0 0 0-.6.22L2.71 8.84a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.62-.06.94s.02.63.06.94l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.4.32.6.22l2.39-.96c.49.38 1.03.7 1.62.94l.36 2.54c.05.24.26.42.5.42h3.84c.24 0 .45-.18.5-.42l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.2.1.46.02.6-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/></svg>
-            </button>
-            <button class="icon-btn" aria-label="Google apps">
-                <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="5" r="1.8"/><circle cx="12" cy="5" r="1.8"/><circle cx="19" cy="5" r="1.8"/><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/><circle cx="5" cy="19" r="1.8"/><circle cx="12" cy="19" r="1.8"/><circle cx="19" cy="19" r="1.8"/></svg>
-            </button>
-            <div class="avatar" aria-label="Account">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2c-3.5 0-8 1.75-8 5v1h16v-1c0-3.25-4.5-5-8-5z"/>
-                </svg>
-            </div>
-        </div>
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+      <input type="text" id="searchInput" placeholder="Search" />
+    </div>
+
+    <div class="right-actions">
+      <button class="icon-btn" id="refreshBtn" data-tooltip="Refresh">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.65 6.35A7.95 7.95 0 0 0 12 4a8 8 0 1 0 7.73 10h-2.08A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+      </button>
+      <button class="icon-btn" id="layoutToggle" data-tooltip="List view">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zm0 9h7v7h-7v-7zM4 13h7v7H4v-7z"/></svg>
+      </button>
+      <button class="icon-btn" data-tooltip="Settings">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.14 12.94a7.14 7.14 0 0 0 .06-.94 7.14 7.14 0 0 0-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.62-.94l-.36-2.54a.5.5 0 0 0-.5-.42h-3.84a.5.5 0 0 0-.5.42l-.36 2.54c-.59.24-1.13.56-1.62.94l-2.39-.96a.5.5 0 0 0-.6.22L2.71 8.84a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.62-.06.94s.02.63.06.94l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.4.32.6.22l2.39-.96c.49.38 1.03.7 1.62.94l.36 2.54c.05.24.26.42.5.42h3.84c.24 0 .45-.18.5-.42l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.2.1.46.02.6-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/></svg>
+      </button>
+      <div class="avatar" data-tooltip="Account">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2c-3.5 0-8 1.75-8 5v1h16v-1c0-3.25-4.5-5-8-5z"/></svg>
+      </div>
     </div>
   </header>
 
-<div class="app-body">
-    <!-- SIDEBAR -->
+  <div class="app-body">
+
+    <!-- ============ SIDEBAR ============ -->
     <nav class="sidebar" id="sidebar">
       <button class="sidebar-item active" data-view="notes">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>
@@ -67,25 +61,24 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
         <span>Trash</span>
       </button>
- 
+
       <div class="sidebar-divider"></div>
- 
+
       <button class="sidebar-item disabled" id="editLabelsBtn" data-tooltip="Not available in this simplified version">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/></svg>
         <span>Edit labels</span>
       </button>
     </nav>
-  </div>
 
-      <!-- Main -->
+    <!-- ============ MAIN CONTENT ============ -->
     <main class="main-content">
- 
+
       <!-- Compose box -->
       <div class="compose-wrapper">
         <div class="compose-box" id="composeBox">
           <input type="text" id="composeTitle" class="compose-title" placeholder="Title" />
           <textarea id="composeText" class="compose-text" placeholder="Take a note..." rows="1"></textarea>
- 
+
           <div class="compose-actions" id="composeActions">
             <div class="compose-tools">
               <div class="tool-wrapper">
@@ -99,21 +92,21 @@
           </div>
         </div>
       </div>
- 
+
       <h2 class="section-title" id="sectionTitle">Notes</h2>
- 
+
       <div class="notes-grid grid-view" id="notesGrid"></div>
       <p class="empty-state" id="emptyState">No notes yet. Notes you add appear here.</p>
- 
+
     </main>
   </div>
- 
-  <!-- EDIT MODAL -->
+
+  <!-- ============ EDIT MODAL ============ -->
   <div class="modal-overlay" id="editOverlay">
     <div class="modal-note" id="editModal">
       <input type="text" id="editTitle" class="edit-title" placeholder="Title" />
       <textarea id="editText" class="edit-text" placeholder="Note"></textarea>
- 
+
       <div class="modal-footer">
         <div class="modal-tools">
           <button class="icon-btn-sm" id="modalArchiveBtn" data-tooltip="Archive">
@@ -133,7 +126,7 @@
       </div>
     </div>
   </div>
- 
+
   <script src="script.js"></script>
 </body>
 </html>
